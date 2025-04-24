@@ -1,0 +1,24 @@
+# Ignore Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environment
+venv/
+
+# Ignore environment variables
+.env
+
+# Ignore map.py specifically
+# map.py
+
+# Ignore common dependency folders (if you're not using pip freeze)
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Optional: Ignore log files and other temporary files
+*.log
+*.tmp
+.DS_Store

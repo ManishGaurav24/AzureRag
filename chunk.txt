@@ -1,0 +1,141 @@
+{
+"id":"80383fab-e80a-4427-a9c2-549cd83dd45b"
+"choices":[
+0:{
+"finish_reason":"stop"
+"index":0
+"logprobs":NULL
+"message":{
+"content":"The header file contains 123 columns [doc1]."
+"refusal":NULL
+"role":"assistant"
+"annotations":NULL
+"audio":NULL
+"function_call":NULL
+"tool_calls":NULL
+"end_turn":true
+"context":{
+"citations":[
+0:{
+"content":"Title: Sample_doc.docx
+
+Medical Billing Analysis Model
+
+Data Source :
+Texas Department of Insurance – Workers Compensation Data  :  DWC medical state reporting public use data file (PUDF)
+The Texas Department of Insurance, Division of Workers' Compensation (DWC) maintains a database of medical service charges, payments, and treatments in the workers' compensation system.
+
+Subset :
+Institutional Medical Billing Services Datasets. SV2 bill types contain institutional (hospital, medical facility) services billed on a CMS-1450 form (UB-92, UB-04).
+
+Dataset Details 
+The Texas Department of Insurance, Division of Workers' Compensation (DWC) maintains a database of institutional medical billing services (SV2). It contains charges, payments, and treatments billed on a CMS-1450 form (UB-92, UB-04) by hospitals and medical facilities that treat injured employees, excluding ambulatory surgical centers, with dates of service for the last five years.
+Header File : 123 Columns , 716 K Rows 
+The header identifies insurance carriers, injured employees, employers, place of service, and diagnostic information. The bill header information groups individual line items reported in the detail section
+Detail File : 51 Columns , 5.2 M Rows
+The detail contains information to identify insurance carriers, injured employees, employers, place of service, and diagnostic information. The bill details are individual line items that are grouped in the header section of a single bill. 
+Data Dictinory  - pudfdictionary2.xlsx
+Target Colum Analysis 
+
+Service Adjustment Group Code means:
+CO (Contractual Obligations): The adjustment is due to the provider's contract with the payer. The provider cannot bill the patient for this amount.
+MA (Medicare Adjustment):Used when adjustments are related to Medicare claim processing.
+OA (Other Adjustment):Used for miscellaneous adjustments that do not fit into other categories.
+PI (Payer Initiated Reductions): The payer has reduced the payment for reasons other than contractual obligations.
+PR (Patient Responsibility):The amount is the patient's responsibility, such as deductibles, co-pays, or co-insurance
+
+Claim Adjustment Reason Code - Claim Adjustment Reason Codes | X12
+Fraudulent Reason Codes
+· Red Flag Reason Codes:
+· {'236', '109', '151', 'B12', '11', '185', '167', '189', '5', '58', '204', '146', '250', '95', '286', '243'}
+· A claim is flagged as 1 if the Group Code is not 'PR' and the Reason Code is in the Red Flag Reason Codes
+
+Red Flag Reason Codes :
+236 : This procedure or procedure/modifier combination is not compatible with another procedure or procedure/modifier combination provided on the same day according to the National Correct Coding Initiative or workers compensation state regulations/ fee schedule requirements
+151 : Payment adjusted because the payer deems the information submitted does not support this many/frequency of services.
+B12: Services not documented in patient's medical records.
+185 : The rendering provider is not eligible to perform the service billed.
+5 : The procedure code/type of bill is inconsistent with the place of service.
+58 : Treatment was deemed by the payer to have been rendered in an inappropriate or invalid place of service.
+146 : Diagnosis was invalid for the date(s) of service reported.
+
+Data Subset  :
+16 K  ( 3 k used for testing ) 
+Drg Code  512 
+"Shoulder, Elbow or Forearm Procedure Except Major Joint Without Complications or Comorbidities (CC/MCC)
+Feature Selected :
+	Employee Date of Injury
+	Principal Diagnosis Code
+	Total Charge Per Bill
+
+	Employee Gender Code
+	Admitting Diagnosis Code
+	Admission Hour
+
+	Employee Mailing City
+	ICD Principal Procedure Code
+	Admission Type Code
+
+	Employer Physical City
+	Diagnosis Related Group Code
+	Policy Start date
+
+	Insurer Postal Code
+	Length of Stay
+	Flag
+
+	Billing Provider City
+	Date of joining
+	
+
+Model Details :
+Algorithm Used : 
+xgb_model = XGBClassifier(n_estimators=250, max_depth=6, learning_rate=0.08, scale_pos_weight=1.8, random_state=42)
+rf_model = RandomForestClassifier(n_estimators=200, max_depth=8, random_state=42)
+Test set :  3,242 
+
+`
+
+Model Output :
+
+Shap Value : 
+
+In
+
+i
+
+image3.png
+
+image4.png
+
+image5.png
+
+image1.png
+
+image2.png
+
+"
+"title":""
+"url":"Sample_doc.docx"
+"filepath":"Sample_doc.docx"
+"chunk_id":"0"
+}
+]
+"intent":"["number of columns in header", "header column count", "how many columns are in the header"]"
+}
+}
+}
+]
+"created":1745497935
+"model":"gpt-4o-mini"
+"object":"extensions.chat.completion"
+"service_tier":NULL
+"system_fingerprint":"fp_ded0d14823"
+"usage":{
+"completion_tokens":34
+"prompt_tokens":3684
+"total_tokens":3718
+"completion_tokens_details":NULL
+"prompt_tokens_details":NULL
+}
+}
