@@ -41,7 +41,7 @@ python -m venv venv
 
 3. Install required packages:
 ```bash
-pip install streamlit openai python-dotenv azure-identity
+pip install streamlit openai python-dotenv
 ```
 
 4. Create a `.env` file with your Azure credentials:
