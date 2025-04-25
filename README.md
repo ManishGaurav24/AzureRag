@@ -3,9 +3,9 @@
 A powerful chatbot built with Azure OpenAI, Azure AI Search, and Streamlit that helps users interact with their documents using natural language.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/azure.png" width="100">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" width="100">
-  <img src="https://www.pinecone.io/images/illustrations/rag.png" width="100">
+  <img src="https://raw.githubusercontent.com/microsoft/PowerBI-Icons/main/SVG/Azure-Logo.svg" width="100" alt="Azure Logo">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" width="100" alt="OpenAI Logo">
+  <img src="https://www.pinecone.io/images/illustrations/rag.png" width="100" alt="RAG Illustration">
 </div>
 
 ## 🚀 Project Overview
