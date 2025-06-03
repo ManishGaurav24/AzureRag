@@ -22,3 +22,9 @@ build/
 *.log
 *.tmp
 .DS_Store
+
+#Include files that are experimental or not ready for production
+appChunk.py
+chunk.txt
+playground.py
+playground2.py

@@ -7,9 +7,9 @@ from dotenv import load_dotenv
 load_dotenv()
 #Manish1st
 # Azure OpenAI configuration
-endpoint = os.getenv("ENDPOINT_URL", "https://ai22042580088494.openai.azure.com/")
+endpoint = os.getenv("ENDPOINT_URL", "https://hubproject00200356835591.openai.azure.com/")
 deployment = os.getenv("DEPLOYMENT_NAME", "gpt-4o-mini")
-search_endpoint = os.getenv("SEARCH_ENDPOINT", "https://sampledocservice.search.windows.net/")
+search_endpoint = os.getenv("SEARCH_ENDPOINT", "https://testaisearch006.search.windows.net/")
 search_key = os.getenv("SEARCH_KEY", "put your Azure AI Search admin key here")
 subscription_key = os.getenv("AZURE_OPENAI_API_KEY", "REPLACE_WITH_YOUR_KEY_VALUE_HERE")
 
@@ -54,21 +54,21 @@ def call_llm(user_input):
                 "parameters": {
                     "filter": None,
                     "endpoint": f"{search_endpoint}",
-                    "index_name": "frosty-guava-ffffs91xq0",
-                    "semantic_configuration": "azureml-default",
+                    "index_name": "azureblob-indexv1",
+                    "semantic_configuration": "testsemantic",
                     "authentication": {
                         "type": "api_key",
                         "key": f"{search_key}"
                     },
                     "embedding_dependency": {
                         "type": "endpoint",
-                        "endpoint": "https://ai22042580088494.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-07-01-preview",
+                        "endpoint": "https://hubproject00200356835591.openai.azure.com/openai/deployments/text-embedding-ada-002/embeddings?api-version=2023-05-15",
                         "authentication": {
                             "type": "api_key",
-                            "key": "CmYU1rinyJ9cZtPt50KacbJPdCCgJV0g8taqRZEEIkIjNM326wn7JQQJ99BDACHYHv6XJ3w3AAAAACOGLmr2"
+                            "key": "2E7P8hbwiEQ7euSTx8VTgl00dlAmg0z4XXbdREq7jTXfzoCTcgt0JQQJ99BFACfhMk5XJ3w3AAAAACOGGjiU"
                         }
                     },
-                    "query_type": "vector_simple_hybrid",
+                    "query_type": "semantic",
                     "in_scope": True,
                     # Removed the problematic "role_information" parameter
                     "strictness": 3,
